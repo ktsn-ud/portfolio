@@ -2,16 +2,16 @@
 
 @font-face {
     font-family: 'LINE Seed';
-    src: url('assets/fonts/LINESeedJP_OTF_Rg.woff2') format('woff2'),
-         url('assets/fonts/LINESeedJP_OTF_Rg.otf') format('opentype');
+    src: url('./assets/fonts/LINESeedJP_OTF_Rg.woff') format('woff'),
+         url('./assets/fonts/LINESeedJP_OTF_Rg.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'LINE Seed';
-    src: url('assets/fonts/LINESeedJP_OTF_Bd.woff2') format('woff2'),
-         url('assets/fonts/LINESeedJP_OTF_Bd.otf') format('opentype');
+    src: url('./assets/fonts/LINESeedJP_OTF_Bd.woff') format('woff'),
+         url('./assets/fonts/LINESeedJP_OTF_Bd.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
 }
