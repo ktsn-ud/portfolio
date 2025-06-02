@@ -1,11 +1,8 @@
 import { useState } from 'react';
 import { IoLogoGithub } from 'react-icons/io';
+import type { ContentsType } from '../types/contents';
 
-type SidebarProps = {
-    contents: { label: string; link: string }[];
-};
-
-export function Sidebar({ contents }: SidebarProps) {
+export function Sidebar({ contents }: { contents: ContentsType }) {
     return (
         <div className="fixed left-0 top-0 h-full w-[300px] px-7 py-10 bg-gray-700 text-white">
             <div>
@@ -46,7 +43,7 @@ function Profile() {
     );
 }
 
-function Table({ contents }: SidebarProps) {
+function Table({ contents }: { contents: ContentsType }) {
     const [active, setActive] = useState('About');
     const items = contents.map((item) => (
         <button
