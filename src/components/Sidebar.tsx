@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IoLogoGithub } from 'react-icons/io';
 import type { ContentsType } from '../types/contents';
 
@@ -43,15 +43,45 @@ function Profile() {
     );
 }
 
+// 目次
 function Table({ contents }: { contents: ContentsType }) {
     const [active, setActive] = useState('About');
+
+    // スクロールに連動してstateを更新
+    useEffect(() => {
+        const handleScroll = () => {
+            let current = contents[0].label;
+            for (let item of contents) {
+                const el = document.getElementById(item.link);
+                if (el) {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top <= 100) {
+                        current = item.label;
+                    }
+                }
+            }
+            setActive(current);
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [])
+
+    // 目次の項目をクリックしたときにスクロール
+    const handleClick = (link: string) => {
+        const el = document.getElementById(link);
+        if (el) {
+            const y = el.getBoundingClientRect().top + window.pageYOffset - 50
+            window.scrollTo({ top: y, behavior: 'smooth' })
+        }
+    };
+
+    // 目次の各項目
     const items = contents.map((item) => (
         <button
             key={item.label}
-            onClick={() => {
-                setActive(item.label);
-                document.getElementById(item.label)?.scrollIntoView();
-            }}
+            onClick={() => handleClick(item.link)}
             className={`w-[100%] h-[40px] px-5 cursor-pointer text-right
                 ${
                     active === item.label

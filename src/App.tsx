@@ -8,9 +8,9 @@ import type { ContentsType } from './types/contents';
 function App() {
     const contents: ContentsType = [
         { label: 'About', label_ja: '自己紹介', link: '#about' },
-        { label: 'History', label_ja: '経歴', link: 'history' },
-        { label: 'Skills', label_ja: 'スキル', link: 'skills' },
-        { label: 'Contact', label_ja: 'お問い合わせ', link: 'contact' },
+        { label: 'History', label_ja: '経歴', link: '#history' },
+        { label: 'Skills', label_ja: 'スキル', link: '#skills' },
+        { label: 'Contact', label_ja: 'お問い合わせ', link: '#contact' },
     ];
     return (
         <>
