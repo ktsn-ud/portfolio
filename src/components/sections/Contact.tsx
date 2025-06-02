@@ -1,7 +1,7 @@
-import type { ContentItemType } from '../types/contents';
-import { Heading } from './Heading';
+import type { ContentItemType } from '../../types/contents';
+import { Heading } from '../Heading';
 
-export function About({ content }: { content: ContentItemType }) {
+export function Contact({ content }: { content: ContentItemType }) {
     return (
         <section>
             <Heading content={content}></Heading>

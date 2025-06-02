@@ -1,8 +1,8 @@
 import { Sidebar } from './components/Sidebar';
-import { About } from './components/About';
-import { History } from './components/History';
-import { Skills } from './components/Skills';
-import { Contact } from './components/Contact';
+import { About } from './components/sections/About';
+import { History } from './components/sections/History';
+import { Skills } from './components/sections/Skills';
+import { Contact } from './components/sections/Contact';
 import type { ContentsType } from './types/contents';
 
 function App() {
