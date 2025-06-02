@@ -54,9 +54,15 @@ function Table({ contents }: { contents: ContentsType }) {
             for (let item of contents) {
                 const el = document.getElementById(item.link);
                 if (el) {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top <= 100) {
-                        current = item.label;
+                    const parent = el.parentElement; // section
+                    if (parent) {
+                        const rect = parent.getBoundingClientRect();
+                        if (
+                            rect.top <= 100 || // セクション上端がウィンドウ上から100px以内
+                            (rect.top >= 0 && rect.bottom <= window.innerHeight) // セクションがウィンドウ内に完全に収まっている
+                        ) {
+                            current = item.label;
+                        }
                     }
                 }
             }
@@ -66,14 +72,14 @@ function Table({ contents }: { contents: ContentsType }) {
         window.addEventListener('scroll', handleScroll, { passive: true });
 
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [])
+    }, []);
 
     // 目次の項目をクリックしたときにスクロール
     const handleClick = (link: string) => {
         const el = document.getElementById(link);
         if (el) {
-            const y = el.getBoundingClientRect().top + window.pageYOffset - 50
-            window.scrollTo({ top: y, behavior: 'smooth' })
+            const y = el.getBoundingClientRect().top + window.pageYOffset - 50;
+            window.scrollTo({ top: y, behavior: 'smooth' });
         }
     };
 
