@@ -1,4 +1,5 @@
 import { Sidebar } from './components/Sidebar';
+import { ProgressBar } from './components/ProgressBar';
 import { About } from './components/sections/About';
 import { History } from './components/sections/History';
 import { Skills } from './components/sections/Skills';
@@ -17,7 +18,7 @@ function App() {
     return (
         <>
             <Sidebar sections={sections}></Sidebar>
-            <div className="ml-[300px]">
+            <div className="ml-[300px] mr-[20px]">
                 <div className='p-8 max-w-[800px] mx-auto'>
                     <About section={sections[0]}></About>
                     <History section={sections[1]}></History>
@@ -26,6 +27,7 @@ function App() {
                     <Contact section={sections[4]}></Contact>
                 </div>
             </div>
+            <ProgressBar />
         </>
     );
 }
