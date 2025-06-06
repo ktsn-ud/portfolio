@@ -1,8 +1,8 @@
-import type { ContentItemType } from '../../types/contents';
+import type { SectionItemType } from '../../types/sections';
 import { Heading } from '../Heading';
 import { FaArrowAltCircleDown } from 'react-icons/fa';
 
-export function About({ content }: { content: ContentItemType }) {
+export function About({ section }: { section: SectionItemType }) {
     const copyStyle = "block w-fit text-4xl text-gray-50 bg-gray-800 my-4";
     const tableRowStyle = "border-b border-gray-300";
     const handleClick = (link: string) => {
@@ -14,8 +14,8 @@ export function About({ content }: { content: ContentItemType }) {
     };
     return (
         <section>
-            <Heading content={content}></Heading>
-            <div className='flex content-center justify-center items-center'>
+            <Heading section={section}></Heading>
+            <div className='flex section-center justify-center items-center'>
                 <div className='text-2xl font-bold text-gray-800'>Philosophy</div>
                 <div className='mx-15 font-bold'>
                     <span className={copyStyle}>課題を自分ごと化し、</span>

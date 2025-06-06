@@ -1,9 +1,9 @@
-import type { ContentItemType } from '../../types/contents';
+import type { SectionItemType } from '../../types/sections';
 import { Heading } from '../Heading';
 import { HiOutlineExternalLink } from "react-icons/hi";
 import { HiOutlineLink } from "react-icons/hi";
 
-export function History({ content }: { content: ContentItemType }) {
+export function History({ section }: { section: SectionItemType }) {
     const history = [
         {
             date: '2023.04',
@@ -127,7 +127,7 @@ export function History({ content }: { content: ContentItemType }) {
 
     return (
         <section>
-            <Heading content={content}></Heading>
+            <Heading section={section}></Heading>
             <div className='ml-[150px] pl-[40px] py-2 border-l-2 border-gray-800 w-[500px]'>
                 {items}
             </div>

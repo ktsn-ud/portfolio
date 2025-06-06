@@ -4,10 +4,10 @@ import { History } from './components/sections/History';
 import { Skills } from './components/sections/Skills';
 import { Strengths } from './components/sections/Strengths';
 import { Contact } from './components/sections/Contact';
-import type { ContentsType } from './types/contents';
+import type { SectionsType } from './types/sections';
 
 function App() {
-    const contents: ContentsType = [
+    const sections: SectionsType = [
         { label: 'About', label_ja: '自己紹介', link: '#about' },
         { label: 'History', label_ja: '経歴', link: '#history' },
         { label: 'Skills', label_ja: 'スキル', link: '#skills' },
@@ -16,14 +16,14 @@ function App() {
     ];
     return (
         <>
-            <Sidebar contents={contents}></Sidebar>
+            <Sidebar sections={sections}></Sidebar>
             <div className="ml-[300px]">
                 <div className='p-8 max-w-[800px] mx-auto'>
-                    <About content={contents[0]}></About>
-                    <History content={contents[1]}></History>
-                    <Skills content={contents[2]}></Skills>
-                    <Strengths content={contents[3]}></Strengths>
-                    <Contact content={contents[4]}></Contact>
+                    <About section={sections[0]}></About>
+                    <History section={sections[1]}></History>
+                    <Skills section={sections[2]}></Skills>
+                    <Strengths section={sections[3]}></Strengths>
+                    <Contact section={sections[4]}></Contact>
                 </div>
             </div>
         </>

@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { IoLogoGithub } from 'react-icons/io';
-import type { ContentsType } from '../types/contents';
+import type { SectionsType } from '../types/sections';
 
-export function Sidebar({ contents }: { contents: ContentsType }) {
+export function Sidebar({ sections }: { sections: SectionsType }) {
     return (
         <div className="fixed left-0 top-0 h-full w-[300px] px-7 py-10 bg-gray-700 text-white">
             <div>
                 <Profile></Profile>
                 <hr className="w-[100%] my-6" />
-                <Table contents={contents}></Table>
+                <Table sections={sections}></Table>
             </div>
             <a
                 href="https://github.com/ktsn-ud"
@@ -44,14 +44,14 @@ function Profile() {
 }
 
 // 目次
-function Table({ contents }: { contents: ContentsType }) {
+function Table({ sections }: { sections: SectionsType }) {
     const [active, setActive] = useState('About');
 
     // スクロールに連動してstateを更新
     useEffect(() => {
         const handleScroll = () => {
-            let current = contents[0].label;
-            for (let item of contents) {
+            let current = sections[0].label;
+            for (let item of sections) {
                 const el = document.getElementById(item.link);
                 if (el) {
                     const parent = el.parentElement; // section
@@ -84,7 +84,7 @@ function Table({ contents }: { contents: ContentsType }) {
     };
 
     // 目次の各項目
-    const items = contents.map((item) => (
+    const items = sections.map((item) => (
         <button
             key={item.label}
             onClick={() => handleClick(item.link)}
