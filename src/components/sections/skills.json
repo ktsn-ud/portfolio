@@ -1,0 +1,150 @@
+[
+    {
+        "field": "プログラミングスキル",
+        "items": [
+            {
+                "title": "Python",
+                "description": "大学での授業や独学で学習したプログラミング言語。競技プログラミング・データ処理において使用経験あり。",
+                "links": null
+            },
+            {
+                "title": "JavaScript / TypeScript",
+                "description": "React (+Vite) を用いたフロントエンド開発を学習・実践中。",
+                "links": null
+            },
+            {
+                "title": "Tailwind CSS",
+                "description": "Reactと併せて使用し、UI設計を効率化。",
+                "links": null
+            },
+            {
+                "title": "C / C++",
+                "description": "競技プログラミングで少しだけ使用経験あり。大学の授業（ソフトウェア演習Ⅰ）でも使用。",
+                "links": [
+                    {
+                        "label": "ソフトウェア演習Ⅰ シラバス",
+                        "url": "https://cu-syllabus-management.an.r.appspot.com/2025/101106101034000/S011314201/ja_JP"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "field": "競技プログラミング",
+        "items": [
+            {
+                "title": "AtCoder 緑（Rating 900以上）",
+                "description": "アルゴリズムとデータ構造に関する実用的な知識を持ち、様々な問題に対して効率的な解法を考えることができる。",
+                "links": [
+                    {
+                        "label": "AtCoder ユーザーページ",
+                        "url": "https://atcoder.jp/users/ktsn_ud"
+                    },
+                    {
+                        "label": "AtCoder公式によるレーティングの解説",
+                        "url": "https://info.atcoder.jp/utilize/jobs/rating-business-impact"
+                    }
+                ]
+            },
+            {
+                "title": "Meta Hacker Cup 2024 Round 1 突破",
+                "description": "Meta社が主催する競技プログラミングコンテストで、22,494 人中 5,000 位以内に入り、Round 1を突破。",
+                "links": [
+                    {
+                        "label": "Meta Hacker Cup 2024",
+                        "url": "https://www.facebook.com/codingcompetitions/hacker-cup/2024"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "field": "数学・情報数理学",
+        "items": [
+            {
+                "title": "数学・情報数理学科",
+                "description": "大学にて専攻。論理的思考力と抽象的な概念への理解力を強みとする。",
+                "links": [
+                    {
+                        "label": "学科HP",
+                        "url": "https://www.math.s.chiba-u.ac.jp/"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "field": "データサイエンス（基礎）",
+        "items": [
+            {
+                "title": "基本的なデータサイエンス・機械学習の知識",
+                "description": "「GCI 2024 Winter」を受講・修了。Pandas / scikit-learn / Matplotlib / Seaborn / XGBoost / LightGBM などのライブラリを使用したデータ分析や機械学習の基礎を学習。",
+                "links": [
+                    {
+                        "label": "GCI 2024 Winter",
+                        "url": "https://gci2.t.u-tokyo.ac.jp/archives/course/gci-2024-winter"
+                    },
+                    {
+                        "label": "Kaggle Titanic (GitHub)",
+                        "url": "https://github.com/ktsn-ud/data-science-public/tree/main/kaggle/titanic"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "field": "Web開発",
+        "items": [
+            {
+                "title": "HTML + CSS + JavaScript",
+                "description": "千葉大祭の公式ホームページの全面リニューアル経験あり。",
+                "links": [
+                    {
+                        "label": "千葉大祭公式ホームページ",
+                        "url": "https://chibafes.com/"
+                    }
+                ]
+            },
+            {
+                "title": "React + Vite + Tailwind CSS",
+                "description": "本サイトはこれらの技術を用いて制作しました。",
+                "links": null
+            }
+        ]
+    },
+    {
+        "field": "資格・検定",
+        "items": [
+            {
+                "title": "基本情報技術者試験",
+                "description": "2025年4月に合格。",
+                "links": null
+            },
+            {
+                "title": "TOEIC 910点",
+                "description": "2025年5月に取得。英語のリーディングとリスニングはとても得意。",
+                "links": null
+            }
+        ]
+    },
+    {
+        "field": "ツール・その他",
+        "items": [
+            {
+                "title": "Git / GitHub",
+                "description": "基本的な使用は可能。",
+                "links": [
+                    {
+                        "label": "私のGitHub",
+                        "url": "https://github.com/ktsn-ud/"
+                    }
+                ]
+            },
+            {
+                "title": "VSCode, WSL2",
+                "description": "主に使用しているエディタと環境。",
+                "links": null
+            }
+        ]
+    }
+]

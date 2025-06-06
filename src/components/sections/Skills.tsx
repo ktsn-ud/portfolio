@@ -1,13 +1,68 @@
 import type { SectionItemType } from '../../types/sections';
 import { Heading } from '../Heading';
+import skillsList from './skills.json'
+import { FaRegCheckSquare } from 'react-icons/fa';
+import { HiOutlineLink } from "react-icons/hi";
+import { HiOutlineExternalLink } from "react-icons/hi";
 
 export function Skills({ section }: { section: SectionItemType }) {
+    const skills = skillsList.map((skill, index) => {
+
+        const links = (linkArr: { label: string, url: string }[], outerIndex: number) => {
+            if (!linkArr) return null;
+            return linkArr.reduce<React.ReactNode[]>((acc, link, innerIndex) => {
+                if (innerIndex > 0) {
+                    acc.push(<span key={`sep-${outerIndex}-${innerIndex}`} className="mx-1 text-gray-400 select-none">｜</span>);
+                }
+                acc.push(
+                    <a
+                        href={link.url}
+                        key={`link-${outerIndex}-${innerIndex}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:opacity-60"
+                    >
+                        {link.label}
+                        <HiOutlineExternalLink className='inline ml-1' />
+                    </a>
+                );
+                return acc;
+            }, []);
+        };
+
+        const details = skill.items.map((item, innerIndex) => {
+            return (
+                <ul key={`skill-${index}-${innerIndex}`} className='pl-[2.5em]'>
+                    <li className='my-5'>
+                        <div className='relative font-bold mr-2'><FaRegCheckSquare className='absolute -left-[1.5em] top-[3px]' />{item.title}:</div>
+                        <p className='pl-[1.5em] leading-6 text-sm'>
+                            {item.description}
+                            {item.links && (
+                                <div className='my-1'>
+                                    <span className='border inline-block p-1 mr-2'><HiOutlineLink className='inline mr-1'/>関連リンク</span>
+                                    {links(item.links, index)}
+                                </div>
+                            )}
+                        </p>
+
+                    </li>
+                </ul>
+            )
+        });
+
+        return (
+            <div key={`field-${index}`} className='my-10'>
+                <h3 className='font-bold text-xl pl-3 my-4 border-b-2'>
+                    {skill.field}
+                </h3>
+                {details}
+            </div>
+        )
+    });
     return (
         <section>
             <Heading section={section}></Heading>
-            <p>
-                打ち明けてみようかという疑問に会って静かに話す機会を奪われていた。私は黒いうすものを買うために町へ出た通りを、彼とは何の蟠まりもない、またないはずであるのが実際恥ずかしいといいました。私はそのまま二、三日を費やした。先生は座敷からこの椿の花はもう一つもありませんが、まるで内所話でもする人のようにやり込めるのです。しかもその信用は初対面の時からの仲好でした。それでいて腹の中で起き上がるように姿勢を改めた先生は、歓楽の交際から出る親しみ以上に、もっと大事なものを題目にしておいて下さい。それからお嬢さんより外に先生を解釈する事ができなかったのです。のみならず数ある同級生のうちで思いました。年輩の先生の語気は前と同じような意味の書状が二、三日して、極めて少なくなった。Ｋはそうではないと答えてまた自分の寝床へ帰った私は、そのままで立ち行くだろうか。やったんですかあるというほどの分別は出なかった。私は何だかひっそりしているらしかった。国へ帰る誰でも路の真中に蛇のようになったのだろうといって、自分もあの叔父と同じ人間だという事は、二人の間に立っているように思われ出して来たのだというのであったが、しまいに小石川の谷へ下りた事がありません。私はお嬢さんがすべて私の方が学生らしい学生だったのです。それで二人は同じ病気で死んだというのは横着な了簡だからね私は母に相談しました。
-            </p>
+            {skills}
         </section>
     );
 }
