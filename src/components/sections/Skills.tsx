@@ -14,7 +14,7 @@ export function Skills({ section }: { section: SectionItemType }) {
             if (!linkArr) return null;
             return linkArr.reduce<React.ReactNode[]>(
                 (acc, link, innerIndex) => {
-                    if (innerIndex > 0) {
+                    if (innerIndex > 0 && window.innerWidth >= 1024) {
                         acc.push(
                             <span
                                 key={`sep-${outerIndex}-${innerIndex}`}
@@ -30,7 +30,7 @@ export function Skills({ section }: { section: SectionItemType }) {
                             key={`link-${outerIndex}-${innerIndex}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:opacity-60"
+                            className="hover:opacity-60 block lg:inline"
                         >
                             {link.label}
                             <HiOutlineExternalLink className="inline ml-1" />
@@ -50,7 +50,7 @@ export function Skills({ section }: { section: SectionItemType }) {
                             <FaRegCheckSquare className="absolute -left-[1.5em] top-[3px]" />
                             {item.title}:
                         </div>
-                        <p className="pl-[1.5em] leading-6 text-sm">
+                        <div className="lg:pl-[1.5em] leading-6 text-sm">
                             {item.description}
                             {item.links && (
                                 <div className="my-1">
@@ -61,7 +61,7 @@ export function Skills({ section }: { section: SectionItemType }) {
                                     {links(item.links, index)}
                                 </div>
                             )}
-                        </p>
+                        </div>
                     </li>
                 </ul>
             );

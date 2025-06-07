@@ -30,3 +30,9 @@ body {
     line-height: 1.5em;
     letter-spacing: 0.03em;
 }
+
+@media screen and (max-width: 1024px) {
+    body {
+        font-size: 14px;
+    }
+}

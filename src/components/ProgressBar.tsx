@@ -25,7 +25,7 @@ export function ProgressBar() {
     return (
         <div
             id="progress-bar"
-            className="fixed left-[297px] top-0 bg-gray-800 h-full w-[6px]"
+            className="hidden lg:block fixed left-[297px] top-0 bg-gray-800 h-full w-[6px]"
         ></div>
     );
 }

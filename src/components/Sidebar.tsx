@@ -5,7 +5,7 @@ import profileIcon from '/src/assets/img/profile_icon.jpg';
 
 export function Sidebar({ sections }: { sections: SectionsType }) {
     return (
-        <div className="fixed left-0 top-0 h-full w-[300px] px-7 py-10 bg-gray-700 text-white">
+        <div className="relative lg:fixed lg:left-0 lg:top-0 h-[600px] lg:h-full w-full lg:w-[300px] px-7 py-10 bg-gray-700 text-white">
             <div>
                 <Profile></Profile>
                 <hr className="w-[100%] my-6" />
@@ -92,7 +92,7 @@ function Table({ sections }: { sections: SectionsType }) {
             className={`w-[100%] h-[40px] px-5 cursor-pointer text-right
                 ${
                     active === item.label
-                        ? 'bg-gray-800 text-[1.1em] font-bold'
+                        ? 'lg:bg-gray-800 lg:text-[1.1em] lg:font-bold'
                         : 'bg-gray-700 hover:bg-gray-600 text-[0.9em]'
                 }`}
         >

@@ -20,8 +20,8 @@ function App() {
         <>
             <Opening />
             <Sidebar sections={sections} />
-            <div className="ml-[300px] mr-[20px]">
-                <div className="p-8 max-w-[800px] mx-auto">
+            <div className="lg:ml-[300px]">
+                <div className="p-8 lg:max-w-[800px] mx-auto">
                     <About section={sections[0]} />
                     <History section={sections[1]} />
                     <Skills section={sections[2]} />
@@ -29,7 +29,7 @@ function App() {
                     <Contact section={sections[4]} />
                 </div>
             </div>
-            <div className="ml-[300px] text-center text-gray-500 text-sm pb-5">
+            <div className="lg:ml-[300px] text-center text-gray-500 text-sm pb-5">
                 &copy; ktsn-ud 2025 All rights reserved.
             </div>
             <ProgressBar />

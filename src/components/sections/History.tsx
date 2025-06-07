@@ -107,13 +107,17 @@ export function History({ section }: { section: SectionItemType }) {
 
     const items = history.map((item, index) => {
         return (
-            <div id={`history-item-${index}`} className="my-5 relative">
-                <div className="absolute -left-[150px] text-right font-bold">
+            <div
+                key={`history-item-${index}`}
+                id={`history-item-${index}`}
+                className="my-5 relative"
+            >
+                <div className="lg:absolute lg:-left-[150px] font-bold">
                     {item.date}
                 </div>
-                <div className="absolute -left-[47px] top-[5px] h-3 w-3 bg-gray-50 border-2 border-gray-800 rounded-full"></div>
+                <div className="absolute -left-[32px] lg:-left-[47px] top-[5px] h-3 w-3 bg-gray-50 border-2 border-gray-800 rounded-full"></div>
                 <div className="font-bold my-1">{item.title}</div>
-                <div className="text-xs ml-5">{item.description}</div>
+                <div className="text-xs ml-3 lg:ml-5">{item.description}</div>
                 {item.link && (
                     <div className="text-xs my-2 ml-5">
                         <span className="border inline-block p-1 mr-2">
@@ -122,7 +126,7 @@ export function History({ section }: { section: SectionItemType }) {
                         </span>
                         <a
                             href={item.link.url}
-                            className="hover:opacity-60"
+                            className="block lg:inline hover:opacity-60"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -138,7 +142,7 @@ export function History({ section }: { section: SectionItemType }) {
     return (
         <section>
             <Heading section={section}></Heading>
-            <div className="ml-[150px] pl-[40px] py-2 border-l-2 border-gray-800 w-[500px]">
+            <div className="ml-[20px] lg:ml-[150px] pl-[25px] lg:pl-[40px] py-2 border-l-2 border-gray-800 lg:w-[500px] text-sm lg:text-base">
                 {items}
             </div>
         </section>
