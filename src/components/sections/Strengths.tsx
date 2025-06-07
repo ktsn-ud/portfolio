@@ -80,7 +80,7 @@ export function Strengths({ section }: { section: SectionItemType }) {
     return (
         <section>
             <Heading section={section}></Heading>
-            <img src="/src/assets/img/strength_venn.svg" alt="強みのベン図" className='w-[400px] mx-auto' />
+            <img src="/src/assets/img/strength_venn.svg" alt="強みのベン図" className='w-[400px] mx-auto pointer-events-none' />
             {
                 strengths.map((strength, index) => (
                     <StrengthItem
