@@ -1,3 +1,4 @@
+import { Opening } from './components/Opening';
 import { Sidebar } from './components/Sidebar';
 import { ProgressBar } from './components/ProgressBar';
 import { About } from './components/sections/About';
@@ -17,15 +18,19 @@ function App() {
     ];
     return (
         <>
-            <Sidebar sections={sections}></Sidebar>
+            <Opening />
+            <Sidebar sections={sections} />
             <div className="ml-[300px] mr-[20px]">
                 <div className='p-8 max-w-[800px] mx-auto'>
-                    <About section={sections[0]}></About>
-                    <History section={sections[1]}></History>
-                    <Skills section={sections[2]}></Skills>
-                    <Strengths section={sections[3]}></Strengths>
-                    <Contact section={sections[4]}></Contact>
+                    <About section={sections[0]} />
+                    <History section={sections[1]} />
+                    <Skills section={sections[2]} />
+                    <Strengths section={sections[3]} />
+                    <Contact section={sections[4]} />
                 </div>
+            </div>
+            <div className='ml-[300px] text-center text-gray-500 text-sm pb-5'>
+                &copy; ktsn-ud 2025 All rights reserved.
             </div>
             <ProgressBar />
         </>
