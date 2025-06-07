@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import type { SectionItemType } from '../../types/sections';
 import { Heading } from '../Heading';
-
+import vennDiagram from '/src/assets/img/strength_venn.svg';
 import { VscTriangleDown } from 'react-icons/vsc';
 
 export function Strengths({ section }: { section: SectionItemType }) {
@@ -81,7 +81,7 @@ export function Strengths({ section }: { section: SectionItemType }) {
         <section>
             <Heading section={section}></Heading>
             <img
-                src="/src/assets/img/strength_venn.svg"
+                src={vennDiagram}
                 alt="強みのベン図"
                 className="w-[400px] mx-auto pointer-events-none"
             />

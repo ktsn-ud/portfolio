@@ -2,24 +2,24 @@
 
 @font-face {
     font-family: 'LINE Seed';
-    src: url('./assets/fonts/LINESeedJP_OTF_Rg.woff') format('woff'),
-         url('./assets/fonts/LINESeedJP_OTF_Rg.otf') format('opentype');
+    src: url('/portfolio/assets/fonts/LINESeedJP_OTF_Rg.woff') format('woff'),
+         url('/portfolio/assets/fonts/LINESeedJP_OTF_Rg.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'LINE Seed';
-    src: url('./assets/fonts/LINESeedJP_OTF_Bd.woff') format('woff'),
-         url('./assets/fonts/LINESeedJP_OTF_Bd.otf') format('opentype');
+    src: url('/portfolio/assets/fonts/LINESeedJP_OTF_Bd.woff') format('woff'),
+         url('/portfolio/assets/fonts/LINESeedJP_OTF_Bd.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'LINE Seed';
-    src: url('./assets/fonts/LINESeedJP_OTF_Eb.woff') format('woff'),
-         url('./assets/fonts/LINESeedJP_OTF_Eb.otf') format('opentype');
+    src: url('/portfolio/assets/fonts/LINESeedJP_OTF_Eb.woff') format('woff'),
+         url('/portfolio/assets/fonts/LINESeedJP_OTF_Eb.otf') format('opentype');
     font-weight: 800;
     font-style: normal;
 }
