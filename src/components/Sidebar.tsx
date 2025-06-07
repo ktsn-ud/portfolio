@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { IoLogoGithub } from 'react-icons/io';
 import type { SectionsType } from '../types/sections';
+import profileIcon from '/src/assets/img/profile_icon.jpg';
 
 export function Sidebar({ sections }: { sections: SectionsType }) {
     return (
@@ -26,7 +27,7 @@ function Profile() {
         <div>
             <div className="flex flex-col items-center justify-center">
                 <img
-                    src="/src/assets/img/profile_icon.jpg"
+                    src={profileIcon}
                     alt=""
                     className="w-[130px] h-[130px] rounded-full object-cover m"
                 />

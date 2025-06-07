@@ -1,7 +1,7 @@
 import type { SectionItemType } from '../../types/sections';
 import { Heading } from '../Heading';
-import { HiOutlineExternalLink } from "react-icons/hi";
-import { HiOutlineLink } from "react-icons/hi";
+import { HiOutlineExternalLink } from 'react-icons/hi';
+import { HiOutlineLink } from 'react-icons/hi';
 
 export function History({ section }: { section: SectionItemType }) {
     const history = [
@@ -65,7 +65,7 @@ export function History({ section }: { section: SectionItemType }) {
             link: {
                 label: 'GCI 2024 Winter',
                 url: 'https://gci2.t.u-tokyo.ac.jp/archives/course/gci-2024-winter',
-            }
+            },
         },
         {
             date: '2024.12',
@@ -107,28 +107,38 @@ export function History({ section }: { section: SectionItemType }) {
 
     const items = history.map((item, index) => {
         return (
-            <div id={`history-${index}`} className='my-5 relative'>
-                <div className='absolute -left-[150px] text-right font-bold'>{item.date}</div>
-                <div className='absolute -left-[47px] top-[5px] h-3 w-3 bg-gray-50 border-2 border-gray-800 rounded-full'></div>
-                <div className='font-bold my-1'>{item.title}</div>
-                <div className='text-xs ml-5'>{item.description}</div>
+            <div id={`history-item-${index}`} className="my-5 relative">
+                <div className="absolute -left-[150px] text-right font-bold">
+                    {item.date}
+                </div>
+                <div className="absolute -left-[47px] top-[5px] h-3 w-3 bg-gray-50 border-2 border-gray-800 rounded-full"></div>
+                <div className="font-bold my-1">{item.title}</div>
+                <div className="text-xs ml-5">{item.description}</div>
                 {item.link && (
-                    <div className='text-xs my-2 ml-5'>
-                        <span className='border inline-block p-1 mr-2'><HiOutlineLink className='inline mr-1'/>関連リンク</span>
-                        <a href={item.link.url} className='hover:opacity-60' target='_blank' rel='noopener noreferrer'>
+                    <div className="text-xs my-2 ml-5">
+                        <span className="border inline-block p-1 mr-2">
+                            <HiOutlineLink className="inline mr-1" />
+                            関連リンク
+                        </span>
+                        <a
+                            href={item.link.url}
+                            className="hover:opacity-60"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             {item.link.label}
-                            <HiOutlineExternalLink className='inline ml-1' />
+                            <HiOutlineExternalLink className="inline ml-1" />
                         </a>
                     </div>
                 )}
             </div>
-        )
+        );
     });
 
     return (
         <section>
             <Heading section={section}></Heading>
-            <div className='ml-[150px] pl-[40px] py-2 border-l-2 border-gray-800 w-[500px]'>
+            <div className="ml-[150px] pl-[40px] py-2 border-l-2 border-gray-800 w-[500px]">
                 {items}
             </div>
         </section>

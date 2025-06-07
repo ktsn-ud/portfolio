@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 import type { SectionItemType } from '../../types/sections';
 import { Heading } from '../Heading';
 
-import { VscTriangleDown } from "react-icons/vsc";
+import { VscTriangleDown } from 'react-icons/vsc';
 
 export function Strengths({ section }: { section: SectionItemType }) {
     const [isOpen1, setIsOpen1] = useState(false);
@@ -41,7 +41,7 @@ export function Strengths({ section }: { section: SectionItemType }) {
                 <>
                     <p className="my-2">
                         基礎から固める堅実な学習スタイルが私の特徴です。
-                        情報工学系ではない環境で基本情報技術者試験に合格し、技術書を活用してGit/GitHubを独学で習得するなど、着実な積み上げ型の学習を実践しています。
+                        情報工学系ではない環境で基本情報技術者試験に合格し、技術書やWebを活用して各種スキルを独学で習得するなど、着実な積み上げ型の学習を実践しています。
                     </p>
                     <p className="my-2">
                         Webエンジニアへの興味からReactの学習を開始し、ポートフォリオサイトの作成に取り組むなど、自ら積極的に技術を習得し、形にする姿勢を持っています。
@@ -61,7 +61,7 @@ export function Strengths({ section }: { section: SectionItemType }) {
                 <>
                     <p className="my-2">
                         メンバーの力を引き出し、チーム全体を支える協調性が私の強みです。
-                        新歓企画・千葉大祭実行委員会の広報部長や新歓企画期局長として、支援型リーダーシップを発揮してきました。
+                        新歓企画・千葉大祭実行委員会事務局の広報部長や新歓企画期局長として、支援型リーダーシップを発揮してきました。
                     </p>
                     <p className="my-2">
                         各担当リーダーと個別対話を重ね、課題やアイデアを詳細に聞き取った上で、必要なスキルを持つメンバーとの橋渡しや、具体的なステップの整理をサポートしています。
@@ -75,40 +75,56 @@ export function Strengths({ section }: { section: SectionItemType }) {
             ),
             isOpen: isOpen3,
             onClick: onClick3,
-        }
-    ]
+        },
+    ];
     return (
         <section>
             <Heading section={section}></Heading>
-            <img src="/src/assets/img/strength_venn.svg" alt="強みのベン図" className='w-[400px] mx-auto pointer-events-none' />
-            {
-                strengths.map((strength, index) => (
-                    <StrengthItem
-                        key={index}
-                        title={strength.title}
-                        description={strength.description}
-                        isOpen={strength.isOpen}
-                        onClick={strength.onClick}
-                    />
-                ))
-            }
-
+            <img
+                src="/src/assets/img/strength_venn.svg"
+                alt="強みのベン図"
+                className="w-[400px] mx-auto pointer-events-none"
+            />
+            {strengths.map((strength, index) => (
+                <StrengthItem
+                    key={index}
+                    title={strength.title}
+                    description={strength.description}
+                    isOpen={strength.isOpen}
+                    onClick={strength.onClick}
+                />
+            ))}
         </section>
     );
 }
 
-function StrengthItem({ title, description, isOpen, onClick }: { title: string, description: React.ReactNode, isOpen: boolean, onClick: () => void }) {
+function StrengthItem({
+    title,
+    description,
+    isOpen,
+    onClick,
+}: {
+    title: string;
+    description: React.ReactNode;
+    isOpen: boolean;
+    onClick: () => void;
+}) {
     return (
         <div className="my-4">
-            <div onClick={onClick} className="cursor-pointer text-lg font-bold p-3 border-2">
-                <VscTriangleDown className={`inline mr-2 transition-all duration-600 ${isOpen ? 'rotate-180' : 'rotate-0'}`} />
+            <div
+                onClick={onClick}
+                className="cursor-pointer text-lg font-bold p-3 border-2"
+            >
+                <VscTriangleDown
+                    className={`inline mr-2 transition-all duration-600 ${isOpen ? 'rotate-180' : 'rotate-0'}`}
+                />
                 {title}
             </div>
-            <div className={`transition-all duration-600 overflow-hidden bg-gray-200 ${isOpen ? 'max-h-[1000px]' : 'max-h-0'}`}>
-                <div className="p-5 leading-6 text-sm">
-                    {description}
-                </div>
+            <div
+                className={`transition-all duration-600 overflow-hidden bg-gray-200 ${isOpen ? 'max-h-[1000px]' : 'max-h-0'}`}
+            >
+                <div className="p-5 leading-6 text-sm">{description}</div>
             </div>
         </div>
-    )
+    );
 }
