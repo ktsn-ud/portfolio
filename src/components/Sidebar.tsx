@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { IoLogoGithub } from 'react-icons/io';
 import type { SectionsType } from '../types/sections';
-import profileIcon from '/src/assets/img/profile_icon.jpg';
+import profileIcon from '/src/assets/img/profile_icon.webp';
 
 export function Sidebar({ sections }: { sections: SectionsType }) {
     return (
