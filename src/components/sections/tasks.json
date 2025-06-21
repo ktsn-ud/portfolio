@@ -1,0 +1,89 @@
+[
+    {
+        "field": "基礎知識の習得",
+        "description": "Webアプリ開発のベースとなるコンピュータサイエンスの基礎知識を身につける。",
+        "tasks": [
+            {
+                "theme": "計算機アーキテクチャ・オペレーティングシステム",
+                "todo": [
+                    {
+                        "name": "『コンピュータはなぜ動くのか』（日経BP）",
+                        "deadline": "2025-7-15",
+                        "status": "ongoing"
+                    },
+                    {
+                        "name": "大学の授業「ソフトウェア演習Ⅰ」",
+                        "deadline": "2025-7-31",
+                        "status": "ongoing"
+                    }
+                ]
+            },
+            {
+                "theme": "ネットワーク",
+                "todo": [
+                    {
+                        "name": "『ネットワークはなぜつながるのか』（日経BP）",
+                        "deadline": "2025-8-15",
+                        "status": "todo"
+                    },
+                    {
+                        "name": "『Webを支える技術』（技術評論社）",
+                        "deadline": "2025-8-31",
+                        "status": "todo"
+                    }
+                ]
+            },
+            {
+                "theme": "ブラウザ",
+                "todo": [
+                    {
+                        "name": "『［作って学ぶ］ブラウザのしくみ』（技術評論社）",
+                        "deadline": "2025-9-30",
+                        "status": "todo"
+                    }
+                ]
+            },
+            {
+                "theme": "セキュリティ",
+                "todo": [
+                    {
+                        "name": "『体系的に学ぶ 安全なWebアプリケーションの作り方』（SB Creative）",
+                        "deadline": "2025-10-15",
+                        "status": "todo"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "field": "技術スタックの深化",
+        "description": "React、TypeScript、Goなどの技術を活用し、実践的なWebアプリ開発スキルを身につける。",
+        "tasks": [
+            {
+                "theme": "フロントエンド",
+                "todo": [
+                    {
+                        "name": "『これからはじめるReact入門』（SB Creative）",
+                        "deadline": "2025-11-20",
+                        "status": "todo"
+                    }
+                ]
+            },
+            {
+                "theme": "バックエンド",
+                "todo": [
+                    {
+                        "name": "A Tour of Go",
+                        "deadline": "2025-11-30",
+                        "status": "todo"
+                    },
+                    {
+                        "name": "『実用Go言語』（オライリー・ジャパン）",
+                        "deadline": "2025-12-20",
+                        "status": "todo"
+                    }
+                ]
+            }
+        ]
+    }
+]

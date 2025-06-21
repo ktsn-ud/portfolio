@@ -7,6 +7,8 @@ import { HiOutlineExternalLink } from 'react-icons/hi';
 
 export function Skills({ section }: { section: SectionItemType }) {
     const skills = skillsList.map((skill, index) => {
+
+        // 各項目内、リンク部分
         const links = (
             linkArr: { label: string; url: string }[],
             outerIndex: number,
@@ -42,6 +44,7 @@ export function Skills({ section }: { section: SectionItemType }) {
             );
         };
 
+        // 各分野内、項目
         const details = skill.items.map((item, innerIndex) => {
             return (
                 <ul key={`skill-${index}-${innerIndex}`} className="pl-[2.5em]">
@@ -68,7 +71,8 @@ export function Skills({ section }: { section: SectionItemType }) {
         });
 
         return (
-            <div key={`field-${index}`} className="my-10">
+            // 各分野見出し
+            <div key={`skill-field-${index}`} className="my-10">
                 <h3 className="font-bold text-xl pl-3 my-4 border-b-2">
                     {skill.field}
                 </h3>
