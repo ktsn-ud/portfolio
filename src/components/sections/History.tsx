@@ -98,10 +98,28 @@ export function History({ section }: { section: SectionItemType }) {
             date: '2025.05',
             title: 'Reactの学習を開始',
             description: `
-            将来的にWebアプリケーション開発に携わりたいと考える。Reactの独学を開始し、
-            ポートフォリオサイトの作成に着手。
+            就活の開始をきっかけに、将来的にWebアプリケーション開発に携わりたいと考える。Reactの独学を開始。
             `,
             link: null,
+        },
+        {
+            date: '2025.06',
+            title: 'ポートフォリオサイト公開開始',
+            description: `
+            6月頭のターム間休みを使って1週間ほどで作成。
+            `,
+            link: null,
+        },
+        {
+            date: '2025.06',
+            title: '学習の方向性転換',
+            description: `
+            面接をきっかけに、プログラミング言語中心に学ぶ学習から、Web開発の基礎をしっかりと学ぶ方向に転換。
+            `,
+            link: {
+                label: '今後の取り組み（本サイト下部）',
+                url: '#roadmap',
+            },
         },
     ];
 

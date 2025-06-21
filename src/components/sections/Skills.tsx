@@ -7,7 +7,6 @@ import { HiOutlineExternalLink } from 'react-icons/hi';
 
 export function Skills({ section }: { section: SectionItemType }) {
     const skills = skillsList.map((skill, index) => {
-
         // 各項目内、リンク部分
         const links = (
             linkArr: { label: string; url: string }[],
