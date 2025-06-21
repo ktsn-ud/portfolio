@@ -2,6 +2,7 @@ import { parse, format } from 'date-fns';
 import type { SectionItemType } from '../../types/sections';
 import { Heading } from '../Heading';
 import roadmapList from './tasks.json';
+import React from 'react';
 
 function RoadmapCard({
     name,
@@ -116,7 +117,7 @@ function Field(
     );
 }
 
-export function Roadmap({ section }: { section: SectionItemType }) {
+export const Roadmap = React.memo(function Roadmap({ section }: { section: SectionItemType }) {
     const roadmapElements = roadmapList.map((field, fieldIdx) =>
         Field(field.field, field.description, field.tasks, fieldIdx),
     );
@@ -142,4 +143,4 @@ export function Roadmap({ section }: { section: SectionItemType }) {
             {roadmapElements}
         </section>
     );
-}
+});

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 
 import type { SectionItemType } from '../../types/sections';
@@ -5,7 +6,7 @@ import { Heading } from '../Heading';
 import vennDiagram from '/src/assets/img/strength_venn.svg';
 import { VscTriangleDown } from 'react-icons/vsc';
 
-export function Strengths({ section }: { section: SectionItemType }) {
+export const Strengths = React.memo(function Strengths({ section }: { section: SectionItemType }) {
     const [isOpen1, setIsOpen1] = useState(false);
     const [isOpen2, setIsOpen2] = useState(false);
     const [isOpen3, setIsOpen3] = useState(false);
@@ -96,7 +97,7 @@ export function Strengths({ section }: { section: SectionItemType }) {
             ))}
         </section>
     );
-}
+});
 
 function StrengthItem({
     title,

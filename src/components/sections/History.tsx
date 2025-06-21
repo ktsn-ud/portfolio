@@ -1,9 +1,10 @@
+import React from 'react';
 import type { SectionItemType } from '../../types/sections';
 import { Heading } from '../Heading';
 import { HiOutlineExternalLink } from 'react-icons/hi';
 import { HiOutlineLink } from 'react-icons/hi';
 
-export function History({ section }: { section: SectionItemType }) {
+export const History = React.memo(function History({ section }: { section: SectionItemType }) {
     const history = [
         {
             date: '2023.04',
@@ -165,4 +166,4 @@ export function History({ section }: { section: SectionItemType }) {
             </div>
         </section>
     );
-}
+});

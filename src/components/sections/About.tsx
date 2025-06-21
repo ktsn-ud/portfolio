@@ -1,8 +1,9 @@
+import React from 'react';
 import type { SectionItemType } from '../../types/sections';
 import { Heading } from '../Heading';
 import { FaArrowAltCircleDown } from 'react-icons/fa';
 
-export function About({ section }: { section: SectionItemType }) {
+export const About = React.memo(function About({ section }: { section: SectionItemType }) {
     const copyStyle =
         'block w-fit text-2xl lg:text-4xl text-gray-50 bg-gray-800 my-2 lg:my-4';
     const tableRowStyle = 'border-b border-gray-300';
@@ -95,4 +96,4 @@ export function About({ section }: { section: SectionItemType }) {
             </table>
         </section>
     );
-}
+});

@@ -1,4 +1,4 @@
-import type React from 'react';
+import React from 'react';
 import type { SectionItemType } from '../../types/sections';
 import { Heading } from '../Heading';
 import skills from './skills.json';
@@ -128,7 +128,7 @@ function Field({
     );
 }
 
-export function Skills({ section }: { section: SectionItemType }) {
+export const Skills = React.memo(function Skills({ section }: { section: SectionItemType }) {
     const skillElements = skills.map((skill, skillIdx) => (
         <Field
             field={skill.field}
@@ -143,4 +143,4 @@ export function Skills({ section }: { section: SectionItemType }) {
             {skillElements}
         </section>
     );
-}
+});

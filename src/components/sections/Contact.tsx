@@ -1,8 +1,9 @@
+import React from 'react';
 import type { SectionItemType } from '../../types/sections';
 import { Heading } from '../Heading';
 import Iframe from 'react-iframe';
 
-export function Contact({ section }: { section: SectionItemType }) {
+export const Contact = React.memo(function Contact({ section }: { section: SectionItemType }) {
     return (
         <section>
             <Heading section={section}></Heading>
@@ -12,4 +13,4 @@ export function Contact({ section }: { section: SectionItemType }) {
             />
         </section>
     );
-}
+});
