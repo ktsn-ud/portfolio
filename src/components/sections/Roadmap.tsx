@@ -34,7 +34,7 @@ function RoadmapCard({
     return (
         <div
             key={`roadmap-todo-${parentKey}-${id}`}
-            className={`w-full min-h-20 ${base} relative ml-5 my-3 px-4 pt-6 pb-2`}
+            className={`w-full min-h-20 ${base} relative lg:ml-5 my-3 px-4 pt-6 pb-2`}
         >
             <div className={`absolute h-full w-1 left-0 top-0 ${accent}`}></div>
             <div

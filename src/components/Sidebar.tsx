@@ -31,6 +31,8 @@ function Profile() {
                 <img
                     src={profileIcon}
                     alt=""
+                    width={1500}
+                    height={1462}
                     className="w-[130px] h-[130px] rounded-full object-cover"
                 />
                 <p className="my-4 font-bold">きつねうどん</p>

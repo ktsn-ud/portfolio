@@ -43,6 +43,8 @@ export function Opening() {
                         <motion.img
                             id="philosophy-en"
                             src={philosophyEn}
+                            width={1471}
+                            height={281}
                             className="w-[60%] lg:w-[20%] z-100 pointer-events-none"
                             initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}

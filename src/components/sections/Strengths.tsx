@@ -84,6 +84,8 @@ export const Strengths = React.memo(function Strengths({ section }: { section: S
             <img
                 src={vennDiagram}
                 alt="強みのベン図"
+                width={1127}
+                height={1076}
                 className="w-[400px] mx-auto pointer-events-none"
             />
             {strengths.map((strength, index) => (
