@@ -23,12 +23,12 @@
                 "todo": [
                     {
                         "name": "『ネットワークはなぜつながるのか』（日経BP）",
-                        "deadline": "2025-8-15",
+                        "deadline": "2025-8-10",
                         "status": "todo"
                     },
                     {
                         "name": "『Webを支える技術』（技術評論社）",
-                        "deadline": "2025-8-31",
+                        "deadline": "2025-8-20",
                         "status": "todo"
                     }
                 ]
@@ -38,7 +38,7 @@
                 "todo": [
                     {
                         "name": "『［作って学ぶ］ブラウザのしくみ』（技術評論社）",
-                        "deadline": "2025-9-30",
+                        "deadline": "2025-8-31",
                         "status": "todo"
                     }
                 ]
@@ -64,7 +64,7 @@
                 "todo": [
                     {
                         "name": "『これからはじめるReact入門』（SB Creative）",
-                        "deadline": "2025-11-20",
+                        "deadline": "2025-8-15",
                         "status": "todo"
                     }
                 ]
@@ -74,12 +74,12 @@
                 "todo": [
                     {
                         "name": "A Tour of Go",
-                        "deadline": "2025-11-30",
+                        "deadline": "2025-8-25",
                         "status": "todo"
                     },
                     {
                         "name": "『実用Go言語』（オライリー・ジャパン）",
-                        "deadline": "2025-12-20",
+                        "deadline": "2025-11-30",
                         "status": "todo"
                     }
                 ]

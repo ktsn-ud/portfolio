@@ -138,7 +138,7 @@ export const Roadmap = React.memo(function Roadmap({ section }: { section: Secti
                 <p className="my-2 text-right">2025年6月20日</p>
             </div>
             <p className="text-sm text-gray-500">
-                このロードマップは、2025年6月21日に更新されました。
+                このロードマップは、2025年6月23日に更新されました。
             </p>
             {roadmapElements}
         </section>
