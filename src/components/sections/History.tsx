@@ -4,7 +4,11 @@ import { Heading } from '../Heading';
 import { HiOutlineExternalLink } from 'react-icons/hi';
 import { HiOutlineLink } from 'react-icons/hi';
 
-export const History = React.memo(function History({ section }: { section: SectionItemType }) {
+export const History = React.memo(function History({
+    section,
+}: {
+    section: SectionItemType;
+}) {
     const history = [
         {
             date: '2023.04',

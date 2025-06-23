@@ -1,8 +1,64 @@
+import React, { useMemo, useState } from 'react';
 import { parse, format } from 'date-fns';
 import type { SectionItemType } from '../../types/sections';
 import { Heading } from '../Heading';
 import roadmapList from './tasks.json';
-import React from 'react';
+
+function SortToggleSwitch({
+    viewMode,
+    setViewMode,
+}: {
+    viewMode: 'byField' | 'byDeadline';
+    setViewMode: React.Dispatch<React.SetStateAction<'byField' | 'byDeadline'>>;
+}) {
+    function fontColor(elementViewMode: 'byField' | 'byDeadline') {
+        if (elementViewMode === viewMode) {
+            return 'text-[white]';
+        } else {
+            return 'text-gray-800';
+        }
+    }
+
+    function position() {
+        switch (viewMode) {
+            case 'byField':
+                return 'top-[3px] left-[3px]';
+            case 'byDeadline':
+                return 'top-[3px] left-[108px]';
+        }
+    }
+
+    function hoverStyle(elementViewMode: 'byField' | 'byDeadline') {
+        if (elementViewMode === viewMode) {
+            return '';
+        } else {
+            return 'lg:hover:bg-gray-200 cursor-pointer';
+        }
+    }
+
+    const commonStyle =
+        'absolute top-[3px] w-[100px] h-[30px] flex items-center justify-center rounded-full transition-all select-none text-sm';
+
+    return (
+        <div className="relative w-[215px] h-[40px] rounded-full border-2 border-gray-800">
+            <div
+                className={`absolute transition-all ${position()} w-[100px] h-[30px] rounded-full bg-gray-800`}
+            ></div>
+            <button
+                onClick={() => setViewMode('byField')}
+                className={`left-[3px] ${commonStyle} ${hoverStyle('byField')} ${fontColor('byField')}`}
+            >
+                ジャンル別
+            </button>
+            <button
+                onClick={() => setViewMode('byDeadline')}
+                className={`left-[108px] ${commonStyle} ${hoverStyle('byDeadline')} ${fontColor('byDeadline')}`}
+            >
+                期限順
+            </button>
+        </div>
+    );
+}
 
 function RoadmapCard({
     name,
@@ -90,12 +146,17 @@ function Tasks({
 
 type TaskType = { theme: string; todo: TodoType[] };
 
-function Field(
-    field: string,
-    description: string,
-    tasks: TaskType[],
-    id: number,
-) {
+function Field({
+    field,
+    description,
+    tasks,
+    id,
+}: {
+    field: string;
+    description: string;
+    tasks: TaskType[];
+    id: number;
+}) {
     const tasksElements = tasks.map((task: TaskType, taskIdx: number) => {
         return (
             <Tasks
@@ -117,10 +178,72 @@ function Field(
     );
 }
 
-export const Roadmap = React.memo(function Roadmap({ section }: { section: SectionItemType }) {
-    const roadmapElements = roadmapList.map((field, fieldIdx) =>
-        Field(field.field, field.description, field.tasks, fieldIdx),
+export const Roadmap = React.memo(function Roadmap({
+    section,
+}: {
+    section: SectionItemType;
+}) {
+    const [viewMode, setViewMode] = useState<'byField' | 'byDeadline'>(
+        'byField',
     );
+
+    const sortedTodos = useMemo(() => {
+        // フラット化
+        const allTodos: TodoType[] = [];
+        roadmapList.forEach((field) => {
+            field.tasks.forEach((task) => {
+                task.todo.forEach((todo) => {
+                    allTodos.push({ ...todo });
+                });
+            });
+        });
+
+        // 期限順にソート
+        allTodos.sort((a, b) => {
+            const dateA = parse(a.deadline, 'yyyy-M-d', new Date());
+            const dateB = parse(b.deadline, 'yyyy-M-d', new Date());
+            return dateA.getTime() - dateB.getTime();
+        });
+
+        return allTodos;
+    }, [roadmapList]);
+
+    const roadmapElements = useMemo(
+        () =>
+            roadmapList.map((field, fieldIdx) => (
+                <Field
+                    field={field.field}
+                    description={field.description}
+                    tasks={field.tasks}
+                    id={fieldIdx}
+                />
+            )),
+        [roadmapList],
+    );
+
+    const flattedRoadmapElements = useMemo(
+        () => (
+            <ul>
+                {sortedTodos.map((todo, todoIdx) => (
+                    <li key={`roadmap-todo-flat-${todoIdx}`}>
+                        <RoadmapCard
+                            name={todo.name}
+                            deadline={parse(
+                                todo.deadline,
+                                'yyyy-M-d',
+                                new Date(),
+                            )}
+                            status={todo.status}
+                            id={todoIdx}
+                            parentKey="flat"
+                        />
+                    </li>
+                ))}
+            </ul>
+        ),
+        [roadmapList, sortedTodos],
+    );
+
     return (
         <section>
             <Heading section={section}></Heading>
@@ -140,7 +263,15 @@ export const Roadmap = React.memo(function Roadmap({ section }: { section: Secti
             <p className="text-sm text-gray-500">
                 このロードマップは、2025年6月23日に更新されました。
             </p>
-            {roadmapElements}
+            <div className="flex justify-end my-2">
+                {
+                    <SortToggleSwitch
+                        viewMode={viewMode}
+                        setViewMode={setViewMode}
+                    />
+                }
+            </div>
+            {viewMode === 'byField' ? roadmapElements : flattedRoadmapElements}
         </section>
     );
 });

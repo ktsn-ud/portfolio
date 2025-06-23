@@ -1,11 +1,15 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { IoLogoGithub } from 'react-icons/io';
-import _ from 'lodash'
+import _ from 'lodash';
 import type { SectionsType } from '../types/sections';
 import profileIcon from '/src/assets/img/profile_icon.webp';
 
-export const Sidebar = React.memo(function Sidebar({ sections }: { sections: SectionsType }) {
+export const Sidebar = React.memo(function Sidebar({
+    sections,
+}: {
+    sections: SectionsType;
+}) {
     return (
         <div className="relative lg:fixed lg:left-0 lg:top-0 h-[600px] lg:h-full w-full lg:w-[300px] px-7 py-10 bg-gray-700 text-white">
             <div>
