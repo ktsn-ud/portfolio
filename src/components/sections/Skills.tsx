@@ -128,7 +128,11 @@ function Field({
     );
 }
 
-export const Skills = React.memo(function Skills({ section }: { section: SectionItemType }) {
+export const Skills = React.memo(function Skills({
+    section,
+}: {
+    section: SectionItemType;
+}) {
     const skillElements = skills.map((skill, skillIdx) => (
         <Field
             field={skill.field}

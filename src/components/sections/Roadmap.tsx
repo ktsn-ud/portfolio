@@ -1,8 +1,62 @@
+import React, { useState } from 'react';
 import { parse, format } from 'date-fns';
 import type { SectionItemType } from '../../types/sections';
 import { Heading } from '../Heading';
 import roadmapList from './tasks.json';
-import React from 'react';
+
+function SortToggleSwitch({
+    viewMode,
+    setViewMode,
+}: {
+    viewMode: 'byField' | 'byDeadline';
+    setViewMode: React.Dispatch<React.SetStateAction<'byField' | 'byDeadline'>>;
+}) {
+
+    function fontColor(elementViewMode: 'byField' | 'byDeadline') {
+        if (elementViewMode === viewMode) {
+            return 'text-[white]';
+        } else {
+            return 'text-gray-800';
+        }
+    }
+
+    function position() {
+        switch (viewMode) {
+            case 'byField':
+                return 'top-[3px] left-[3px]';
+            case 'byDeadline':
+                return 'top-[3px] left-[108px]';
+        }
+    }
+
+    function hoverStyle(elementViewMode: 'byField' | 'byDeadline') {
+        if (elementViewMode === viewMode) {
+            return '';
+        } else {
+            return 'hover:bg-gray-200 cursor-pointer';
+        }
+    }
+
+    return (
+        <div className="relative w-[215px] h-[40px] rounded-full border-2 border-gray-800">
+            <div
+                className={`absolute transition-all ${position()} w-[100px] h-[30px] rounded-full bg-gray-800`}
+            ></div>
+            <div
+                onClick={() => setViewMode('byField')}
+                className={`absolute top-[3px] left-[3px] w-[100px] h-[30px] ${hoverStyle('byField')} flex items-center justify-center rounded-full transition-all ${fontColor('byField')}`}
+            >
+                ジャンル別
+            </div>
+            <div
+                onClick={() => setViewMode('byDeadline')}
+                className={`absolute top-[3px] left-[108px] w-[100px] h-[30px] ${hoverStyle('byDeadline')} flex items-center justify-center rounded-full transition-all ${fontColor('byDeadline')}`}
+            >
+                期限順
+            </div>
+        </div>
+    );
+}
 
 function RoadmapCard({
     name,
@@ -117,7 +171,14 @@ function Field(
     );
 }
 
-export const Roadmap = React.memo(function Roadmap({ section }: { section: SectionItemType }) {
+export const Roadmap = React.memo(function Roadmap({
+    section,
+}: {
+    section: SectionItemType;
+}) {
+    const [viewMode, setViewMode] = useState<'byField' | 'byDeadline'>(
+        'byField',
+    );
     const roadmapElements = roadmapList.map((field, fieldIdx) =>
         Field(field.field, field.description, field.tasks, fieldIdx),
     );
@@ -140,6 +201,7 @@ export const Roadmap = React.memo(function Roadmap({ section }: { section: Secti
             <p className="text-sm text-gray-500">
                 このロードマップは、2025年6月23日に更新されました。
             </p>
+            {<SortToggleSwitch viewMode={viewMode} setViewMode={setViewMode} />}
             {roadmapElements}
         </section>
     );
