@@ -146,12 +146,17 @@ function Tasks({
 
 type TaskType = { theme: string; todo: TodoType[] };
 
-function Field(
-    field: string,
-    description: string,
-    tasks: TaskType[],
-    id: number,
-) {
+function Field({
+    field,
+    description,
+    tasks,
+    id,
+}: {
+    field: string;
+    description: string;
+    tasks: TaskType[];
+    id: number;
+}) {
     const tasksElements = tasks.map((task: TaskType, taskIdx: number) => {
         return (
             <Tasks
@@ -205,9 +210,14 @@ export const Roadmap = React.memo(function Roadmap({
 
     const roadmapElements = useMemo(
         () =>
-            roadmapList.map((field, fieldIdx) =>
-                Field(field.field, field.description, field.tasks, fieldIdx),
-            ),
+            roadmapList.map((field, fieldIdx) => (
+                <Field
+                    field={field.field}
+                    description={field.description}
+                    tasks={field.tasks}
+                    id={fieldIdx}
+                />
+            )),
         [roadmapList],
     );
 
@@ -231,7 +241,7 @@ export const Roadmap = React.memo(function Roadmap({
                 ))}
             </ul>
         ),
-        [roadmapList],
+        [roadmapList, sortedTodos],
     );
 
     return (
