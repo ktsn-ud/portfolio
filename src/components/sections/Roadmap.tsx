@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { parse, format } from 'date-fns';
 import type { SectionItemType } from '../../types/sections';
 import { Heading } from '../Heading';
@@ -11,7 +11,6 @@ function SortToggleSwitch({
     viewMode: 'byField' | 'byDeadline';
     setViewMode: React.Dispatch<React.SetStateAction<'byField' | 'byDeadline'>>;
 }) {
-
     function fontColor(elementViewMode: 'byField' | 'byDeadline') {
         if (elementViewMode === viewMode) {
             return 'text-[white]';
@@ -179,9 +178,59 @@ export const Roadmap = React.memo(function Roadmap({
     const [viewMode, setViewMode] = useState<'byField' | 'byDeadline'>(
         'byField',
     );
-    const roadmapElements = roadmapList.map((field, fieldIdx) =>
-        Field(field.field, field.description, field.tasks, fieldIdx),
+
+    const sortedTodos = useMemo(() => {
+        // フラット化
+        const allTodos: TodoType[] = [];
+        roadmapList.forEach((field) => {
+            field.tasks.forEach((task) => {
+                task.todo.forEach((todo) => {
+                    allTodos.push({ ...todo });
+                });
+            });
+        });
+
+        // 期限順にソート
+        allTodos.sort((a, b) => {
+            const dateA = parse(a.deadline, 'yyyy-M-d', new Date());
+            const dateB = parse(b.deadline, 'yyyy-M-d', new Date());
+            return dateA.getTime() - dateB.getTime();
+        });
+
+        return allTodos;
+    }, [roadmapList]);
+
+    const roadmapElements = useMemo(
+        () =>
+            roadmapList.map((field, fieldIdx) =>
+                Field(field.field, field.description, field.tasks, fieldIdx),
+            ),
+        [roadmapList],
     );
+
+    const flattedRoadmapElements = useMemo(
+        () => (
+            <ul>
+                {sortedTodos.map((todo, todoIdx) => (
+                    <li key={`roadmap-todo-flat-${todoIdx}`}>
+                        <RoadmapCard
+                            name={todo.name}
+                            deadline={parse(
+                                todo.deadline,
+                                'yyyy-M-d',
+                                new Date(),
+                            )}
+                            status={todo.status}
+                            id={todoIdx}
+                            parentKey="flat"
+                        />
+                    </li>
+                ))}
+            </ul>
+        ),
+        [roadmapList],
+    );
+
     return (
         <section>
             <Heading section={section}></Heading>
@@ -202,7 +251,7 @@ export const Roadmap = React.memo(function Roadmap({
                 このロードマップは、2025年6月23日に更新されました。
             </p>
             {<SortToggleSwitch viewMode={viewMode} setViewMode={setViewMode} />}
-            {roadmapElements}
+            {viewMode === 'byField' ? roadmapElements : flattedRoadmapElements}
         </section>
     );
 });
