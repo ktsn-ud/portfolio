@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { parse, format } from 'date-fns';
 import type { SectionItemType } from '../../types/sections';
 import { Heading } from '../Heading';
@@ -44,18 +44,18 @@ function SortToggleSwitch({
             <div
                 className={`absolute transition-all ${position()} w-[100px] h-[30px] rounded-full bg-gray-800`}
             ></div>
-            <div
+            <button
                 onClick={() => setViewMode('byField')}
                 className={`left-[3px] ${commonStyle} ${hoverStyle('byField')} ${fontColor('byField')}`}
             >
                 ジャンル別
-            </div>
-            <div
+            </button>
+            <button
                 onClick={() => setViewMode('byDeadline')}
                 className={`left-[108px] ${commonStyle} ${hoverStyle('byDeadline')} ${fontColor('byDeadline')}`}
             >
                 期限順
-            </div>
+            </button>
         </div>
     );
 }
