@@ -32,9 +32,12 @@ function SortToggleSwitch({
         if (elementViewMode === viewMode) {
             return '';
         } else {
-            return 'hover:bg-gray-200 cursor-pointer';
+            return 'lg:hover:bg-gray-200 cursor-pointer';
         }
     }
+
+    const commonStyle =
+        'absolute top-[3px] w-[100px] h-[30px] flex items-center justify-center rounded-full transition-all select-none text-sm';
 
     return (
         <div className="relative w-[215px] h-[40px] rounded-full border-2 border-gray-800">
@@ -43,13 +46,13 @@ function SortToggleSwitch({
             ></div>
             <div
                 onClick={() => setViewMode('byField')}
-                className={`absolute top-[3px] left-[3px] w-[100px] h-[30px] ${hoverStyle('byField')} flex items-center justify-center rounded-full transition-all ${fontColor('byField')}`}
+                className={`left-[3px] ${commonStyle} ${hoverStyle('byField')} ${fontColor('byField')}`}
             >
                 ジャンル別
             </div>
             <div
                 onClick={() => setViewMode('byDeadline')}
-                className={`absolute top-[3px] left-[108px] w-[100px] h-[30px] ${hoverStyle('byDeadline')} flex items-center justify-center rounded-full transition-all ${fontColor('byDeadline')}`}
+                className={`left-[108px] ${commonStyle} ${hoverStyle('byDeadline')} ${fontColor('byDeadline')}`}
             >
                 期限順
             </div>
@@ -250,7 +253,14 @@ export const Roadmap = React.memo(function Roadmap({
             <p className="text-sm text-gray-500">
                 このロードマップは、2025年6月23日に更新されました。
             </p>
-            {<SortToggleSwitch viewMode={viewMode} setViewMode={setViewMode} />}
+            <div className="flex justify-end my-2">
+                {
+                    <SortToggleSwitch
+                        viewMode={viewMode}
+                        setViewMode={setViewMode}
+                    />
+                }
+            </div>
             {viewMode === 'byField' ? roadmapElements : flattedRoadmapElements}
         </section>
     );
