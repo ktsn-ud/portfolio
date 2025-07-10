@@ -121,9 +121,17 @@ export const History = React.memo(function History({
             description: `
             面接をきっかけに、プログラミング言語中心に学ぶ学習から、Web開発の基礎をしっかりと学ぶ方向に転換。
             `,
+            link: null,
+        },
+        {
+            date: '2025.06',
+            title: "Track Job Beginner's Hackathon 参加",
+            description: `
+            6月末に開催された2日間のハッカソンに参加。初めてのチーム開発を経験。
+            `,
             link: {
-                label: '今後の取り組み（本サイト下部）',
-                url: '#roadmap',
+                label: '振り返り記事（note）',
+                url: 'https://note.com/ktsn_ud/n/n9a8add9bd397',
             },
         },
     ];
