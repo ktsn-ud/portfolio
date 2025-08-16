@@ -20,7 +20,7 @@ function App() {
     ];
     return (
         <>
-            <Opening />
+            {/* <Opening /> */}
             <Sidebar sections={sections} />
             <div className="lg:ml-[300px]">
                 <div className="p-8 lg:max-w-[800px] mx-auto">
