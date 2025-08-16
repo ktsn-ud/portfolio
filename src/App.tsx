@@ -1,10 +1,10 @@
-import { Opening } from './components/Opening';
+// import { Opening } from './components/Opening';
 import { Sidebar } from './components/Sidebar';
 import { ProgressBar } from './components/ProgressBar';
 import { About } from './components/sections/About';
 import { History } from './components/sections/History';
 import { Skills } from './components/sections/Skills';
-import { Roadmap } from './components/sections/Roadmap';
+// import { Roadmap } from './components/sections/Roadmap';
 import { Strengths } from './components/sections/Strengths';
 import { Contact } from './components/sections/Contact';
 import type { SectionsType } from './types/sections';
