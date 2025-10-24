@@ -26,7 +26,7 @@ function Links({
     } else {
         linksElements = links.reduce<React.ReactNode[]>(
             (acc, link, linkIdx) => {
-                if (linkIdx > 0 && window.innerWidth >= 1024) {
+                if (linkIdx > 0) {
                     acc.push(
                         <span
                             key={`skill-link-${parentKey}-sep-${linkIdx}`}
