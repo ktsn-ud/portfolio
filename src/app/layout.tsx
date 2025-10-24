@@ -13,17 +13,17 @@ export const metadata: Metadata = {
 const lineSeed = localFont({
     src: [
         {
-            path: '../../public/assets/fonts/LINESeedJP_OTF_Rg_subsetted.woff2',
+            path: '../assets/fonts/LINESeedJP_OTF_Rg_subsetted.woff2',
             weight: '400',
             style: 'normal',
         },
         {
-            path: '../../public/assets/fonts/LINESeedJP_OTF_Bd_subsetted.woff2',
+            path: '../assets/fonts/LINESeedJP_OTF_Bd_subsetted.woff2',
             weight: '700',
             style: 'normal',
         },
         {
-            path: '../../public/assets/fonts/LINESeedJP_OTF_Eb_subsetted.woff2',
+            path: '../assets/fonts/LINESeedJP_OTF_Eb_subsetted.woff2',
             weight: '800',
             style: 'normal',
         },
