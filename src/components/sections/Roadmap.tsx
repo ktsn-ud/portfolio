@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useMemo, useState } from 'react';
 import { parse, format } from 'date-fns';
 import type { SectionItemType } from '../../types/sections';

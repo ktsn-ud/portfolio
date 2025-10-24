@@ -1,10 +1,13 @@
+'use client';
+
 import React from 'react';
 import { useState } from 'react';
 
 import type { SectionItemType } from '../../types/sections';
 import { Heading } from '../Heading';
-import vennDiagram from '/src/assets/img/strength_venn.svg';
+import vennDiagram from '../../assets/img/strength_venn.svg';
 import { VscTriangleDown } from 'react-icons/vsc';
+import Image from 'next/image';
 
 export const Strengths = React.memo(function Strengths({
     section,
@@ -85,7 +88,7 @@ export const Strengths = React.memo(function Strengths({
     return (
         <section>
             <Heading section={section}></Heading>
-            <img
+            <Image
                 src={vennDiagram}
                 alt="強みのベン図"
                 width={1127}

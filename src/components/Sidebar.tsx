@@ -1,9 +1,12 @@
+'use client';
+
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { IoLogoGithub } from 'react-icons/io';
 import _ from 'lodash';
 import type { SectionsType } from '../types/sections';
-import profileIcon from '/src/assets/img/profile_icon.webp';
+import profileIcon from '../assets/img/profile_icon.webp';
+import Image from 'next/image';
 
 export const Sidebar = React.memo(function Sidebar({
     sections,
@@ -32,12 +35,11 @@ function Profile() {
     return (
         <div>
             <div className="flex flex-col items-center justify-center">
-                <img
+                <Image
                     src={profileIcon}
-                    alt=""
-                    width={1500}
-                    height={1462}
+                    alt="profile icon"
                     className="w-[130px] h-[130px] rounded-full object-cover"
+                    priority={true}
                 />
                 <p className="my-4 font-bold">きつねうどん</p>
             </div>
