@@ -37,10 +37,9 @@ function Profile() {
             <div className="flex flex-col items-center justify-center">
                 <Image
                     src={profileIcon}
-                    alt=""
-                    width={1500}
-                    height={1462}
+                    alt="profile icon"
                     className="w-[130px] h-[130px] rounded-full object-cover"
+                    priority={true}
                 />
                 <p className="my-4 font-bold">きつねうどん</p>
             </div>
