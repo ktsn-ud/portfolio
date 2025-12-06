@@ -134,52 +134,6 @@ export const History = React.memo(function History({
                 url: 'https://note.com/ktsn_ud/n/n9a8add9bd397',
             },
         },
-        {
-            date: '2025.07',
-            title: '大学祭のHPのNext.jsへの移行を開始',
-            description: `
-            将来性を鑑みて、生HTML/CSS/JSで構築されていた大学祭のHPをNext.jsへ移行することを決定。
-            `,
-            link: null,
-        },
-        {
-            date: '2025.08',
-            title: '株式会社メンバーズ インターンシップ参加',
-            description: `
-            5daysのWeb開発インターンシップに参加。5人チームでのWebアプリケーション開発を経験。
-            要件定義から成果報告までを実施。使用技術はFlaskで、フロントエンドを担当。
-            未決仕様の洗い出しやタスク整理を主導し、全員の認識を揃えながら開発を進行。
-            UX観点からも仕様を確認し、最終的に3チーム中最高評価を得た。
-            `,
-            link: null,
-        },
-        {
-            date: '2025.08',
-            title: '大学祭HPのNext.js移行完了・団体企画ページの実装を開始',
-            description: `
-            新しく検索機能を実装し、ユーザーが目的の情報にアクセスしやすいように改善。
-            バックエンドはFastAPIで構築し、内部ではNumPyを用いたキーワード検索・ベクトル検索を実装。
-            `,
-            link: null,
-        },
-        {
-            date: '2025.08',
-            title: 'ヴァル研究所 インターンシップ参加',
-            description: `
-            5daysのWeb開発インターンシップに参加。2〜3人チームでモブプロを実施。
-            経路検索API（mixway API）を利用したWebアプリケーションをReactで開発。
-            `,
-            link: null,
-        },
-        {
-            date: '2025.09',
-            title: 'ナビタイムジャパン インターンシップ参加',
-            description: `
-            3daysのWeb開発インターンシップに参加。2人チームでモブプロを実施。
-            経路検索API（NAVITIME API）を利用したWebアプリケーションをVue.jsで開発。
-            `,
-            link: null,
-        },
     ];
 
     const items = history.map((item, index) => {

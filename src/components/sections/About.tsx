@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import type { SectionItemType } from '../../types/sections';
 import { Heading } from '../Heading';
