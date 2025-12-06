@@ -1,16 +1,37 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/index.css">
-    <title>ktsn-ud's portfolio</title>
-    <meta name="robots" content="noindex">
-  </head>
-  <body class="text-gray-800">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "466fa3cca9ec43a4a864d380524295c8"}'></script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/src/index.css" />
+        <title>サイトが移転しました</title>
+        <meta name="robots" content="noindex" />
+    </head>
+    <body class="text-gray-800">
+        <div style="text-align: center; padding: 50px">
+            <h1 style="font-weight: bold">サイトが移転しました。</h1>
+            <p>3秒後に新しいサイトへ自動的に移動します</p>
+            <p>
+                ※自動的に遷移しない場合は
+                <a
+                    href="https://portfolio.ktsnud.dev"
+                    style="color: blue; text-decoration: underline"
+                >
+                    こちら
+                </a>
+                をクリックしてください。
+            </p>
+        </div>
+        <script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon='{"token": "466fa3cca9ec43a4a864d380524295c8"}'
+        ></script>
+        <script>
+            setTimeout(() => {
+                window.location.replace('https://portfolio.ktsnud.dev');
+            }, 3000);
+        </script>
+    </body>
 </html>
